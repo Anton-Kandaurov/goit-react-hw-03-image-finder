@@ -1,21 +1,24 @@
-import { ImageGalleryItem } from '../ImageGalleryItem';
-import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { ImageGalleryItem } from 'components/ImageGalleryItem';
+import { ImageGalleryList } from './styled';
 
-export class ImageGallery extends Component{
-  state = {
-  
-  }
+export const ImageGallery = ({ imagesArray, showModal }) => {
+  return (
+    <ImageGalleryList>
+      {imagesArray.map(({ id, webformatURL, largeImageURL }) => (
+        <ImageGalleryItem
+          key={id}
+          id={id}
+          webformatURL={webformatURL}
+          largeImageURL={largeImageURL}
+          showModal={showModal}
+        />
+      ))}
+    </ImageGalleryList>
+  );
+};
 
-  
-  render() {
-  
-    return (
-        <>
-          <ul class="gallery">
-          <ImageGalleryItem />
-          </ul>
-            
-        </>
-    )
-  }
+ImageGallery.propTypes = {
+  imageArray: PropTypes.arrayOf(PropTypes.object.isRequired),
+  showModal: PropTypes.func.isRequired,
 };

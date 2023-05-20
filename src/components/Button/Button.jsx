@@ -1,16 +1,14 @@
-import { Component } from 'react';
+import { LoadButton } from './styled';
+import PropTypes from 'prop-types';
 
-export class Button extends Component{
-  state = {
-  
-  }
+export const Button = ({ handleClick }) => {
+  return (
+    <LoadButton type="button" onClick={handleClick}>
+      Load more
+    </LoadButton>
+  );
+};
 
-  
-  render() {
-  
-    return (
-        <>
-        </>
-    )
-  }
+Button.propTypes = {
+  handleClick: PropTypes.func.isRequired,
 };
