@@ -10,7 +10,7 @@ export const SearchbarTop = styled.header`
   min-height: 64px;
   padding: 25px 12px;
   color: #888;
-  background-color: #555;
+  background-color: #666;
 `;
 
 export const Search = styled.form`
